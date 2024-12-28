@@ -1,4 +1,5 @@
 import pandas as pd 
+import numpy as np
 
 pd.DataFrame({'A': [1,2,3]})
 
@@ -32,3 +33,11 @@ df2 = pd.DataFrame(
 )
 
 df2.loc[:, ["D", "F"]]
+
+
+ts = pd.Series(np.random.randn(1000), index=pd.date_range("1/1/2004", periods=1000))
+
+ts = ts.cumsum()
+
+ts.plot()
+
